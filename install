@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+path="$HOME/dotfiles"
+
+xcode-select --install || true
+sudo xcodebuild -license accept || true
+
+if [ -e $path/.git ]; then
+  cd $path && git pull
+else
+  git clone https://github.com/ilbonte/dotfiles.git $path
+fi
+
+echo "Ready!"
