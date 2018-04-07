@@ -13,4 +13,7 @@ else
   git clone https://github.com/ilbonte/dotfiles.git $path
 fi
 
+sh $path/mac
+sh $path/brew
+
 echo "Ready!"
