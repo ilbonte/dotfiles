@@ -1,0 +1,21 @@
+[submodule "dots/fisherman/git_util"]
+	path = dots/fisherman/git_util
+	url = https://github.com/fisherman/git_util
+[submodule "dots/fisherman/host_info"]
+	path = dots/fisherman/host_info
+	url = https://github.com/fisherman/host_info.git
+[submodule "dots/fisherman/humanize_duration"]
+	path = dots/fisherman/humanize_duration
+	url = https://github.com/fisherman/humanize_duration.git
+[submodule "dots/fisherman/last_job_id"]
+	path = dots/fisherman/last_job_id
+	url = https://github.com/fisherman/last_job_id.git
+[submodule "dots/fisherman/pwd_info"]
+	path = dots/fisherman/pwd_info
+	url = https://github.com/fisherman/pwd_info.git
+[submodule "dots/fisherman/pwd_is_home"]
+	path = dots/fisherman/pwd_is_home
+	url = https://github.com/fisherman/pwd_is_home.git
+[submodule "dots/fisherman/simple"]
+	path = dots/fisherman/simple
+	url = https://github.com/fisherman/simple.git
