@@ -15,7 +15,6 @@ link_to(){
   ln -sfv $PWD/$DOTS/$file ~/$file
 }
 
-
 for file in $DOTS_FILES
 do
   file=$(basename $file)

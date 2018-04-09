@@ -15,5 +15,6 @@ fi
 
 sh $path/mac
 sh $path/brew
+sh $path/dotfiles
 
 echo "Ready!"
