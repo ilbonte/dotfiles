@@ -5,4 +5,4 @@ if ! type "brew" > /dev/null; then
 fi
 
 brew tap Homebrew/bundle
-brew bundle 
+brew bundle --file="$HOME/dotfiles/Brewfile"
