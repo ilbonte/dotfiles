@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# LINK DOTFILES
+
+DOTS=dots
+DOTS_FILES=$(echo $DOTS/.*)
+HOME=$(cd && pwd)
+PWD=$(pwd)
+
+link_to(){
+  file="$1"
+  if [[ -f ~/$file || -d ~/$file ]]; then
+    mv -f -v ~/$file ~/$file.orig
+  fi
+  ln -sfv $PWD/$DOTS/$file ~/$file
+}
+
+
+for file in $DOTS_FILES
+do
+  file=$(basename $file)
+  if [[ "$file" == "." || "$file" == ".*" || "$file" == ".." ]]; then
+    continue
+  fi
+  link_to "$file"
+done
