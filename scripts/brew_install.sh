@@ -7,4 +7,4 @@ then
 fi
 
 brew tap homebrew/bundle
-brew bundle --no-lock option --file="$1" 
+brew bundle --no-lock --file="$1" 
