@@ -1,0 +1,5 @@
+#!/bin/bash
+
+open -a jumpcut
+open -a spectacle
+

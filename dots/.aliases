@@ -1,0 +1,2 @@
+alias ll="ls -lah"
+alias brew-update-all="brew update && brew upgrade && brew cask upgrade && brew cleanup"

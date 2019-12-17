@@ -1,20 +1,15 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
 
-path="$HOME/dotfiles"
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="dotbot"
 
-xcode-select --install || true
-sudo xcodebuild -license accept || true
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-if [ -e $path/.git ]; then
-  cd $path && git pull
-else
-  git clone https://github.com/ilbonte/dotfiles.git $path
-fi
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
 
-sh $path/mac
-sh $path/brew
-sh $path/dotfiles
-
-echo "Ready!"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
