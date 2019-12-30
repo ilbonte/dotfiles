@@ -20,3 +20,4 @@ setopt appendhistory
 setopt auto_cd
 
 source ~/.aliases
+source ~/.functions

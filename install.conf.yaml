@@ -13,6 +13,7 @@
 - link:
     ~/.gitconfig: dots/.gitconfig
     ~/.aliases: dots/.aliases
+    ~/.functions: dots/.functions
     ~/.gitignore_global: dots/.gitignore_global
     ~/.zshrc: dots/.zshrc
     ~/.startup: dots/.startup
