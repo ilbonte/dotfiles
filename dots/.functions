@@ -33,3 +33,9 @@ function setup_aws_credentials() {
     echo "AWS env variables set:"
     printenv | grep AWS | sed 's;=.*;;' | sort
 }
+
+
+mkdircd ()
+{
+    mkdir -p -- "$1" && cd -P -- "$1"
+}
