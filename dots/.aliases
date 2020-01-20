@@ -1,2 +1,3 @@
 alias ll="ls -lah"
 alias brew-update-all="brew update && brew upgrade && brew cask upgrade && brew cleanup && brew doctor"
+alias clean-keystore="security delete-internet-password -l "git-codecommit.eu-west-1.amazonaws.com" ~/Library/Keychains/login.keychain-db"
