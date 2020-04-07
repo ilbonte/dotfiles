@@ -5,3 +5,4 @@ alias aliasconfig="vim ~/dotfiles/dots/.aliases"
 alias functionsconfig="vim ~/dotfiles/dots/.functions"
 alias v=vagrant
 alias z=j
+alias doc=docker-compose
