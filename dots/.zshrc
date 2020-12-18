@@ -9,6 +9,7 @@ antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle danielefongo/shapeshift
 antigen bundle aws
+antigen bundle fzf
 
 antigen apply
 
@@ -27,5 +28,9 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
+export PATH="/usr/local/texlive/2020/bin/x86_64-darwin:$PATH"
 eval $(thefuck --alias)
+
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
