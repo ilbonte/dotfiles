@@ -40,6 +40,51 @@ function mkdircd()
     mkdir -p -- "$1" && cd -P -- "$1"
 }
 
-denter () {
+function denter () {
 	docker exec -it $1 /bin/bash
+}
+
+function start_musement(){
+    open --background -a /Applications/Docker.app
+    open /Applications/PhpStorm.app
+
+    sleep 15
+    while ! docker system info > /dev/null 2>&1; do sleep 2; done
+    cd /Users/bonte/work/musement/docker-dev
+    docker-compose up -d
+#    cd /Users/bonte/work/musement/business-platform
+#    docker-compose up -d
+  cd /Users/bonte/work/musement/musement-core 
+}
+
+function stop_musement(){
+    cd /Users/bonte/work/musement/docker-dev
+    docker-compose down
+ #   cd /Users/bonte/work/musement/business-platform
+ #   docker-compose down
+    pkill -x Docker
+}
+
+function musement_post_pull_core(){
+    cd /Users/bonte/work/musement/musement-core
+    rm -fr app/cache
+    docker exec -it musement_fpm composer install --no-interaction
+    docker exec -it musement_fpm php bin/console doctrine:migrations:migrate --no-interaction
+    docker exec -it musement_fpm composer prepare-test-env
+    curl https://musement.localhost/admin/dashboard -k
+    curl https://musement.localhost/app_dev.php/admim/dashboard -k
+    curl https://musement.localhost/admin/dashboard -k
+    curl https://musement.localhost/app_dev.php/_profiler/ -k
+}
+
+function subdir () {
+  reset="\033[0m"
+  red="\033[01;31m"
+  cyan="\033[01;36m"
+
+  if [[ $# -eq 0 ]]; then
+    echo "${red}There is no command to run on each subdir${red}"
+  else
+    ls -d */ | xargs -n1 bash -c 'cd $0; echo -e "'"${reset}${cyan}"'-------------------------\n--- '"$(echo "$@")"' (in $0)\n-------------------------'"${cyan}${reset}"'";'"$(echo "$@")"';echo -e "\n"'
+  fi
 }
