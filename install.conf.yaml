@@ -17,7 +17,6 @@
     ~/.gitignore_global: dots/.gitignore_global
     ~/.zshrc: dots/.zshrc
     ~/.startup: dots/.startup
-    ~/Library/ApplicationSupport/Spectacle/Shortcuts.json: dots/.spectacle
 
 - shell:
   - [sh scripts/brew_install.sh brew/Brewfile,Installing HomeBrew packages]
