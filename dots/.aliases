@@ -3,6 +3,6 @@ alias brew-update-all="brew update && brew upgrade && brew upgrade --cask && bre
 alias delete-keystore="security delete-internet-password -l "git-codecommit.eu-west-1.amazonaws.com" ~/Library/Keychains/login.keychain-db"
 alias aliasconfig="vim ~/dotfiles/dots/.aliases"
 alias functionsconfig="vim ~/dotfiles/dots/.functions"
+alias zshconfig="vim ~/dotfiles/dots/.zshrc"
 alias v=vagrant
-alias z=j
 alias doc=docker-compose
